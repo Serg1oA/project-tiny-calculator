@@ -18,195 +18,286 @@ const buttonClear = document.querySelector("#buttonClear");
 const buttonEqual = document.querySelector("#buttonEqual");
 const display = document.querySelector("#display");
 
-// functions for each operation
-function add(a, b) {
-    return a + b;
-}
-function subtract(a, b) {
-    return a - b;
-}
-function multiply(a, b) {
-    return a * b;
-}
-function divide(a, b) {
-    return a / b;
-}
-
 // creating variables to store the 1st nr., the operator, and the 2nd nr.
 let displayValue = 0;
-let firstNumber = undefined;
-let operator = undefined;
-let secondNumber = undefined;
-
-// functino to update the display
-function updateDisplay() {
-    display.textContent = displayValue;
-}
-
-// create a new function "operate"
-function operate(a, b, x) {
-    if (x === "+") {
-        return add(a, b);
-    } else if (x === "-") {
-        return subtract(a, b);
-    } else if (x === "*") {
-        return multiply(a, b);
-    } else if (x === "/") {
-        return divide(a, b);
-    }
-}
+updateDisplay();
+let firstNumber;
+let operator;
+let secondNumber;
+let lastButtonPressed;
+let resultOfEqual = 0;
 
 // what happens when each button is clicked
 buttonOne.addEventListener("click", () => {
-    if (firstNumber === undefined) {
-        firstNumber = 1;
-    } else {
+    if (lastButtonPressed !== "operator") {
+        if (firstNumber === undefined) {
+            firstNumber = 1;
+            displayValue = firstNumber;
+        } else {
+            firstNumber = firstNumber * 10 + 1;
+            displayValue = firstNumber;
+        }
+    } else if (lastButtonPressed === "operator") {
         if (secondNumber === undefined) {
             secondNumber = 1;
+            displayValue = secondNumber;
         } else {
             secondNumber = secondNumber * 10 + 1;
+            displayValue = secondNumber;
         }
     }
-    displayValue = secondNumber !== undefined ? secondNumber : firstNumber;
+    lastButtonPressed = "number";
     updateDisplay();
 });
+
 buttonTwo.addEventListener("click", () => {
-    if (firstNumber === undefined) {
-        firstNumber = 2;
-    } else {
+    if (lastButtonPressed !== "operator") {
+        if (firstNumber === undefined) {
+            firstNumber = 2;
+            displayValue = firstNumber;
+        } else {
+            firstNumber = firstNumber * 10 + 2;
+            displayValue = firstNumber;
+        }
+    } else if (lastButtonPressed === "operator") {
         if (secondNumber === undefined) {
             secondNumber = 2;
+            displayValue = secondNumber;
         } else {
             secondNumber = secondNumber * 10 + 2;
+            displayValue = secondNumber;
         }
     }
-    displayValue = secondNumber !== undefined ? secondNumber : firstNumber;
+    lastButtonPressed = "number";
     updateDisplay();
 });
+
 buttonThree.addEventListener("click", () => {
-    if (firstNumber === undefined) {
-        firstNumber = 3;
-    } else {
+    if (lastButtonPressed !== "operator") {
+        if (firstNumber === undefined) {
+            firstNumber = 3;
+            displayValue = firstNumber;
+        } else {
+            firstNumber = firstNumber * 10 + 3;
+            displayValue = firstNumber;
+        }
+    } else if (lastButtonPressed === "operator") {
         if (secondNumber === undefined) {
             secondNumber = 3;
+            displayValue = secondNumber;
         } else {
             secondNumber = secondNumber * 10 + 3;
+            displayValue = secondNumber;
         }
     }
-    displayValue = secondNumber !== undefined ? secondNumber : firstNumber;
+    lastButtonPressed = "number";
     updateDisplay();
 });
+
 buttonFour.addEventListener("click", () => {
-    if (firstNumber === undefined) {
-        firstNumber = 4;
-    } else {
+    if (lastButtonPressed !== "operator") {
+        if (firstNumber === undefined) {
+            firstNumber = 4;
+            displayValue = firstNumber;
+        } else {
+            firstNumber = firstNumber * 10 + 4;
+            displayValue = firstNumber;
+        }
+    } else if (lastButtonPressed === "operator") {
         if (secondNumber === undefined) {
             secondNumber = 4;
+            displayValue = secondNumber;
         } else {
             secondNumber = secondNumber * 10 + 4;
+            displayValue = secondNumber;
         }
     }
-    displayValue = secondNumber !== undefined ? secondNumber : firstNumber;
+    lastButtonPressed = "number";
     updateDisplay();
 });
+
 buttonFive.addEventListener("click", () => {
-    if (firstNumber === undefined) {
-        firstNumber = 5;
-    } else {
+    if (lastButtonPressed !== "operator") {
+        if (firstNumber === undefined) {
+            firstNumber = 5;
+            displayValue = firstNumber;
+        } else {
+            firstNumber = firstNumber * 10 + 5;
+            displayValue = firstNumber;
+        }
+    } else if (lastButtonPressed === "operator") {
         if (secondNumber === undefined) {
             secondNumber = 5;
+            displayValue = secondNumber;
         } else {
             secondNumber = secondNumber * 10 + 5;
+            displayValue = secondNumber;
         }
     }
-    displayValue = secondNumber !== undefined ? secondNumber : firstNumber;
+    lastButtonPressed = "number";
     updateDisplay();
 });
+
 buttonSix.addEventListener("click", () => {
-    if (firstNumber === undefined) {
-        firstNumber = 6;
-    } else {
+    if (lastButtonPressed !== "operator") {
+        if (firstNumber === undefined) {
+            firstNumber = 6;
+            displayValue = firstNumber;
+        } else {
+            firstNumber = firstNumber * 10 + 6;
+            displayValue = firstNumber;
+        }
+    } else if (lastButtonPressed === "operator") {
         if (secondNumber === undefined) {
             secondNumber = 6;
+            displayValue = secondNumber;
         } else {
             secondNumber = secondNumber * 10 + 6;
+            displayValue = secondNumber;
         }
     }
-    displayValue = secondNumber !== undefined ? secondNumber : firstNumber;
+    lastButtonPressed = "number";
     updateDisplay();
 });
+
 buttonSeven.addEventListener("click", () => {
-    if (firstNumber === undefined) {
-        firstNumber = 7;
-    } else {
+    if (lastButtonPressed !== "operator") {
+        if (firstNumber === undefined) {
+            firstNumber = 7;
+            displayValue = firstNumber;
+        } else {
+            firstNumber = firstNumber * 10 + 7;
+            displayValue = firstNumber;
+        }
+    } else if (lastButtonPressed === "operator") {
         if (secondNumber === undefined) {
             secondNumber = 7;
+            displayValue = secondNumber;
         } else {
             secondNumber = secondNumber * 10 + 7;
+            displayValue = secondNumber;
         }
     }
-    displayValue = secondNumber !== undefined ? secondNumber : firstNumber;
+    lastButtonPressed = "number";
     updateDisplay();
 });
+
 buttonEight.addEventListener("click", () => {
-    if (firstNumber === undefined) {
-        firstNumber = 8;
-    } else {
+    if (lastButtonPressed !== "operator") {
+        if (firstNumber === undefined) {
+            firstNumber = 8;
+            displayValue = firstNumber;
+        } else {
+            firstNumber = firstNumber * 10 + 8;
+            displayValue = firstNumber;
+        }
+    } else if (lastButtonPressed === "operator") {
         if (secondNumber === undefined) {
             secondNumber = 8;
+            displayValue = secondNumber;
         } else {
             secondNumber = secondNumber * 10 + 8;
+            displayValue = secondNumber;
         }
     }
-    displayValue = secondNumber !== undefined ? secondNumber : firstNumber;
+    lastButtonPressed = "number";
     updateDisplay();
 });
+
 buttonNine.addEventListener("click", () => {
-    if (firstNumber === undefined) {
-        firstNumber = 9;
-    } else {
+    if (lastButtonPressed !== "operator") {
+        if (firstNumber === undefined) {
+            firstNumber = 9;
+            displayValue = firstNumber;
+        } else {
+            firstNumber = firstNumber * 10 + 9;
+            displayValue = firstNumber;
+        }
+    } else if (lastButtonPressed === "operator") {
         if (secondNumber === undefined) {
             secondNumber = 9;
+            displayValue = secondNumber;
         } else {
             secondNumber = secondNumber * 10 + 9;
+            displayValue = secondNumber;
         }
     }
-    displayValue = secondNumber !== undefined ? secondNumber : firstNumber;
+    lastButtonPressed = "number";
     updateDisplay();
 });
+
 buttonZero.addEventListener("click", () => {
-    if (firstNumber === undefined) {
-        firstNumber = 0;
-    } else {
+    if (lastButtonPressed !== "operator") {
+        if (firstNumber === undefined) {
+            firstNumber = 0;
+            displayValue = firstNumber;
+        } else {
+            firstNumber = firstNumber * 10 + 0;
+            displayValue = firstNumber;
+        }
+    } else if (lastButtonPressed === "operator") {
         if (secondNumber === undefined) {
             secondNumber = 0;
+            displayValue = secondNumber;
         } else {
             secondNumber = secondNumber * 10 + 0;
+            displayValue = secondNumber;
         }
     }
-    displayValue = secondNumber !== undefined ? secondNumber : firstNumber;
+    lastButtonPressed = "number";
     updateDisplay();
 });
 
 // When an operator button is clicked
 buttonPlus.addEventListener("click", () => {
+    if (firstNumber === undefined) {
+        firstNumber = 0;
+    }
+    if (lastButtonPressed === "equal") {
+        firstNumber = resultOfEqual;
+    }
     operator = "+";
     displayValue = operator;
+    lastButtonPressed = "operator";
     updateDisplay();
 });
+
 buttonMinus.addEventListener("click", () => {
+    if (firstNumber === undefined) {
+        firstNumber = 0;
+    }
+    if (lastButtonPressed === "equal") {
+        firstNumber = resultOfEqual;
+    }
     operator = "-";
     displayValue = operator;
+    lastButtonPressed = "operator";
     updateDisplay();
 });
+
 buttonMult.addEventListener("click", () => {
+    if (firstNumber === undefined) {
+        firstNumber = 0;
+    }
+    if (lastButtonPressed === "equal") {
+        firstNumber = resultOfEqual;
+    }
     operator = "*";
     displayValue = operator;
+    lastButtonPressed = "operator";
     updateDisplay();
 });
+
 buttonDiv.addEventListener("click", () => {
+    if (firstNumber === undefined) {
+        firstNumber = 0;
+    }
+    if (lastButtonPressed === "equal") {
+        firstNumber = resultOfEqual;
+    }
     operator = "/";
     displayValue = operator;
+    lastButtonPressed = "operator";
     updateDisplay();
 });
 
@@ -216,6 +307,7 @@ buttonClear.addEventListener("click", () => {
     secondNumber = undefined;
     operator = "";
     displayValue = 0;
+    lastButtonPressed = "clear";
     updateDisplay();
 });
 
@@ -224,14 +316,14 @@ buttonEqual.addEventListener("click", () => {
     if (firstNumber !== undefined && operator && secondNumber !== undefined) {
         displayValue = operate(firstNumber, secondNumber, operator);
         updateDisplay();
-
         // Reset the variables for further calculations
-        firstNumber = displayValue;
+        resultOfEqual = displayValue; 
         operator = undefined;
         secondNumber = undefined;
     } else {
         // Handle error or incomplete expression
-        displayValue = "Error";
+        displayValue = "Error, redo!";
         updateDisplay();
     }
+    lastButtonPressed = "equal";
 });
